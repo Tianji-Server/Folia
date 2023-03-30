@@ -28,3 +28,9 @@ jobs:
         run: ./gradlew applyPatches
       - name: Build
         run: ./gradlew build
+      - name: Jar
+        run: ./gradlew createMojmapPaperclipJar
+      - uses: actions/upload-artifact@v3
+        with:
+          name: jar
+          path: build/libs
